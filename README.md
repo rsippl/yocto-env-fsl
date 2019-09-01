@@ -69,7 +69,8 @@ Finally, proceed with the following (as a non-root user):
 bitbake core-image-minimal
 ```
 
-Copy `conf` from `workspace/build` to the project's root dir, in order to add `local.conf`, `bblayers.conf` etc. to the git repo.
+Copy `conf` from `workspace/build` to the project's root dir, in order to add
+`local.conf`, `bblayers.conf` etc. to the git repo.
 
 ### Working with the Docker Environment
 
@@ -78,3 +79,14 @@ Copy `conf` from `workspace/build` to the project's root dir, in order to add `l
 . ./init-env
 bitbake core-image-minimal
 ```
+
+### Creating an SD Card Image
+
+Creating an image using bitbake generates a compressed wic file in
+workspace/build/tmp/deploy/images. For example, a
+`bitbake core-image-minimal` on imx6ulevk will generate
+`workspace/build/tmp/deploy/images/imx6ulevk/core-image-minimal-imx6ulevk.wic.gz`
+
+Use balenaEtcher (https://www.balena.io/etcher) to write it to an SD card.
+
+Connect to the board via USB, then use `serial.sh` to watch it boot.
