@@ -39,7 +39,6 @@ Tested with the NXP i.MX6UL Evaluation Kit
     (`build/conf/*.conf`) to source control
   - if it exists, `init-env` adds it to the workspace via symlink
 - `workspace`
-
   - contains layers downloaded by `clone-layers.sh`, Yocto artifacts built by
     `bitbake`, (a symlink to) the configuration directory etc.
   - ignored by git
@@ -67,7 +66,7 @@ Finally, proceed with the following (as a non-root user):
 ./start.sh
 ./clone-layers.sh
 . ./init-env
-# now you can run bitbake
+bitbake core-image-minimal
 ```
 
 Copy `conf` from `workspace/build` to the project's root dir, in order to add `local.conf`, `bblayers.conf` etc. to the git repo.
@@ -77,5 +76,5 @@ Copy `conf` from `workspace/build` to the project's root dir, in order to add `l
 ```
 ./start.sh
 . ./init-env
-bitbake ...
+bitbake core-image-minimal
 ```
