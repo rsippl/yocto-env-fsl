@@ -18,6 +18,8 @@ Tested with the NXP i.MX6UL Evaluation Kit
 - `init-env`
   - initializes the environment variables, so you can issue commands like `bitbake` etc.
   - source it _every time_ you start the container: `source ./init-env`
+- `serial.sh`
+  - connects to the board's serial port (via /dev/ttyUSB0)
 
 ### Directories
 
